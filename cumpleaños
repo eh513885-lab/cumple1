@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Feliz Cumpleaños mi niña hermosa 💖</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    overflow: hidden;
+}
+
+/* ===== INTRO PASTEL ===== */
+#introPastel {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #ff758c, #ff7eb3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 20;
+    flex-direction: column;
+}
+
+#nombreDibujo {
+    position: absolute;
+    font-size: 130px;
+    top: 20%;
+    width: 100%;
+    text-align: center;
+
+    font-family: 'Brush Script MT', cursive;
+    color: gold;
+
+    border-right: 3px solid white; /* cursor */
+    white-space: nowrap;
+    overflow: hidden;
+text-shadow: 0 0 20px rgba(255,255,255,0.7);
+    width: 0;
+    animation: escribirNombre 8s steps(20) forwards, parpadeo 0.9s infinite;
+}
+
+/* animación escritura */
+@keyframes escribirNombre {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+/* cursor parpadeando */
+@keyframes parpadeo {
+    0%, 50%, 100% { border-color: white; }
+    25%, 75% { border-color: transparent; }
+}
+
+/* pastel */
+.cake { position: relative; width: 220px; }
+.layer {
+    width: 220px;
+    height: 40px;
+    border-radius: 10px;
+    margin: 5px 0;
+    opacity: 0;
+}
+.layer1 { background: linear-gradient(to right, #5a2d0c, #8b4513); }
+.layer2 { background: linear-gradient(to right, #ff4da6, #ff85c1); }
+.layer3 { background: linear-gradient(to right, #ffffff, #ffffff); }
+
+.cream {
+    width: 220px;
+    height: 20px;
+    background: violet;
+    border-radius: 50%;
+    opacity: 0;
+}
+.cherry {
+    width: 15px;
+    height: 15px;
+    background: red;
+    border-radius: 50%;
+    margin: auto;
+    opacity: 0;
+}
+
+.candle {
+    width: 15px;
+    height: 40px;
+    background: orange;
+    margin: auto;
+    border-radius: 15px;
+    opacity: 0;
+}
+
+.flame {
+    width: 15px;
+    height: 20px;
+    background: yellow;
+    border-radius: 70%;
+    margin: auto;
+    opacity: 0;
+}
+.cake {
+    position: relative;
+    margin-top: 400px;
+}
+
+.candle {
+    position: absolute;
+    top: -45px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.flame {
+    position: absolute;
+    top: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* animaciones */
+@keyframes fall {
+    from { transform: translateY(-400px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeOut {
+    to { opacity: 0; visibility: hidden; }
+}
+
+/* ===== INTRO ===== */
+#intro {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: black;
+    color: white;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    z-index: 10;
+    text-align: center;
+    padding: 20px;
+    animation: fadeOut 7s ease forwards;
+    animation-delay: 7s;
+}
+
+/* corazones explosivos */
+.explosion {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: red;
+    transform: rotate(45deg);
+    animation: explotar 2s ease-out forwards;
+}
+
+.explosion::before,
+.explosion::after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: red;
+    border-radius: 50%;
+}
+
+.explosion::before { top: -5px; left: 0; }
+.explosion::after { left: -5px; top: 0; }
+
+@keyframes explotar {
+    0% {
+        transform: scale(0.5) translate(0,0) rotate(45deg);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1.5) translate(var(--x), var(--y)) rotate(45deg);
+        opacity: 0;
+    }
+}
+
+/* 🎆 CONFETI */
+@keyframes caerConfeti {
+    to {
+        transform: translateY(100vh) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+.container {
+    text-align: center;
+    padding-top: 100px;
+}
+
+h1 {
+    font-size: 40px;
+    animation: aparecer 2s ease-in-out;
+}
+
+@keyframes aparecer {
+    from { opacity: 0; transform: translateY(-50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.corazon {
+    position: absolute;
+    width: 35px;
+    height: 30px;
+    background:red ;
+    transform: rotate(45deg);
+    animation: flotar 1000s linear infinite;
+    opacity: 5;
+    box-shadow: 0 0 10px rgba(255,0,0,0.7);
+}
+
+.corazon::before,
+.corazon::after {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: red;
+    border-radius: 100%;
+}
+
+.corazon::before { top: -10px; left: 0; }
+.corazon::after { left: -10px; top: 0; }
+
+@keyframes flotar {
+    0% { transform: translateY(100vh) rotate(45deg); opacity: 1; }
+    100% { transform: translateY(-10vh) rotate(45deg); opacity: 0; }
+}
+
+button {
+    padding: 15px 25px;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    background: #ff4d6d;
+    color: white;
+    cursor: pointer;
+}
+
+#carta {
+    display: none;
+    margin-top: 20px;
+    background: violet;
+    color: rgb(0, 0, 0);       
+    padding: 30px;
+    border-radius: 15px;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    animation: aparecer 4s ease-in-out;
+    font-size: 20px;
+    line-height: 1.2;
+}
+</style>
+</head>
+
+<body>
+
+<!-- 🎂 PASTEL -->
+<div id="introPastel">
+
+    <!-- ✍️ NOMBRE -->
+    <h1 id="nombreDibujo"></h1>
+
+    <div class="cake">
+    <div class="flame" id="flame"></div>
+    <div class="candle" id="candle"></div>
+
+    <div class="cherry" id="cherry"></div>
+    <div class="cream" id="cream"></div>
+    <div class="layer layer3" id="layer3"></div>
+    <div class="layer layer2" id="layer2"></div>
+    <div class="layer layer1" id="layer1"></div>
+</div>
+</div>
+
+<!-- 💖 TU INTRO ORIGINAL -->
+<div id="intro">💖 Hoy es un dia muy especial para ti corazon,hoy nacio una niña muyy hermosa y especial para mi y con unos ojos tan hermosos los cuales no dejaria de ver en ningun momento 💖</div>
+
+<!-- CONTENIDO ORIGINAL -->
+<div class="container">
+    <h1>💖🎉 Feliz Cumpleaños Mi Amor 🎉💖</h1>
+    <p>Eres la mejor parte de mi vida, Mi niña peshiosha y El amor de mi vida ❤️</p>
+
+    <button onclick="mostrarCarta()">Abrir sorpresa 💌</button>
+
+    <div id="carta">
+        <h2>Para ti corazon... 💖</h2>
+        <p id="textoCarta"></p>
+    </div>
+</div>
+
+<script>
+// 🎂 pastel
+setTimeout(()=>layer1.style.animation="fall 1s forwards",500);
+setTimeout(()=>layer2.style.animation="fall 1s forwards",1200);
+setTimeout(()=>layer3.style.animation="fall 1s forwards",1900);
+setTimeout(()=>cream.style.animation="fall 1s forwards",2600);
+setTimeout(()=>cherry.style.animation="fall 1s forwards",3200);
+setTimeout(()=>candle.style.animation="fall 1s forwards",3800);
+setTimeout(()=>flame.style.opacity="1",4500);
+
+// ✍️ SOLO AGREGADO (NO MODIFICA NADA)
+const nombre = "carolina 💖"; // cámbialo
+let j = 0;
+
+function escribirNombre() {
+    const el = document.getElementById("nombreDibujo");
+    if (j < nombre.length) {
+        el.innerHTML += nombre.charAt(j);
+        j++;
+        setTimeout(escribirNombre, 120);
+    }
+}
+setTimeout(escribirNombre, 700);
+
+// transición
+setTimeout(()=>{
+    introPastel.style.display="none";
+    intro.style.display="flex";
+},6000);
+
+// 💖 corazones (TUYO IGUAL)
+function crearCorazon() {
+    const corazon = document.createElement('div');
+    corazon.classList.add('corazon');
+    corazon.style.left = Math.random() * 100 + 'vw';
+    corazon.style.animationDuration = (Math.random() * 3 + 3) + 's';
+    document.body.appendChild(corazon);
+
+    setTimeout(() => {
+        corazon.remove();
+    }, 5000);
+}
+
+setInterval(crearCorazon, 200);
+
+// 💥 explosión (TUYA IGUAL PERO BIEN SINCRONIZADA)
+setTimeout(() => {
+    const intervaloExplosion = setInterval(() => {
+        for (let i = 0; i < 25; i++) {
+            const heart = document.createElement('div');
+            heart.classList.add('explosion');
+
+            heart.style.setProperty('--x', (Math.random()*200-100)+'px');
+            heart.style.setProperty('--y', (Math.random()*200-100)+'px');
+
+            heart.style.left = Math.random()*100+'vw';
+            heart.style.top = Math.random()*100+'vh';
+
+            document.getElementById('intro').appendChild(heart);
+
+            setTimeout(()=>heart.remove(),1000);
+        }
+    },400);
+
+    setTimeout(()=>clearInterval(intervaloExplosion),7000);
+},6000);
+
+function lanzarConfeti() {
+    for (let i = 0; i < 100; i++) {
+        const c = document.createElement("div");
+        c.style.position = "absolute";
+        c.style.width = "9px";
+        c.style.height = "12px";
+        c.style.background = `hsl(${Math.random()*360},100%,50%)`;
+        c.style.left = Math.random()*100+"vw";
+        c.style.top = "-10px";
+        c.style.animation = "caerConfeti 3s linear forwards";
+        document.body.appendChild(c);
+        setTimeout(()=>c.remove(),7000);
+    }
+}
+
+// 💌 carta (TU TEXTO IGUAL)
+const cartaTexto = `
+Hoy celebro el día en que nació la persona que cambió mi mundo.
+Gracias por cada sonrisa y cada momento que hemos pasado juntos mi niña 
+hoy es un dia muy muy especial para ti cumples 16 añitos mi amorr que wonito
+sabesh que siempre voy a estar para ti en cada momento de tu vida corazon
+sea bueno o malo yo siempre voy a estar para apoyarte y si tienes un dia 
+malo solo dimelo y hago que regrese ese brillo tan hermoso de tus ojos y 
+la linda sonrisa que tienes mi niña, nunca olvides ni dudes del gran amor 
+que te tengo mi amorr sabesh que puedes contar conmigo
+ para lo que sea mi niña peshiosha, te amooo mash 
+de lo que sabesh y mashh de lo que te imaginas mi niña hermosa, pasatela 
+super mienn en este dia corazon y recuerda que eres una niña muyy linda y hermosa 
+y miaaa claro jaja, te amooooo mi amorr te mando muchoss muchoss beshitoss, muaaaa 💖, 
+Feliz cumpleaños mi niña peshiosha 💖🎂, 
+Del amor de tu vidaa💖
+`;
+
+let i = 0;
+
+function escribirCarta() {
+    const carta = document.getElementById("textoCarta");
+
+    if (i < cartaTexto.length) {
+        const letra = cartaTexto.charAt(i);
+
+        if (letra === "\n") {
+            carta.innerHTML += "<br>";
+        } else {
+            carta.innerHTML += letra;
+        }
+
+        i++;
+        setTimeout(escribirCarta, 35);
+    }
+}
+
+function mostrarCarta() {
+    document.getElementById('carta').style.display = 'block';
+    document.getElementById('textoCarta').innerHTML = "";
+    i = 0;  
+
+    escribirCarta();
+    lanzarConfeti();
+    }
+</script>
+
+</body>
+</html>
